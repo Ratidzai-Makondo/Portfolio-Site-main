@@ -90,6 +90,10 @@ nav {
 }
 
 /* Hamburger Nav */
+#hamburger-nav {
+  display: none;
+}
+
 @media screen and (max-width: 1200px) {
   #desktop-nav {
     display: none;
@@ -462,7 +466,7 @@ footer p {
   }
 }
 
-/*@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
   #desktop-nav {
     display: none;
   }
@@ -473,7 +477,7 @@ footer p {
     padding: 1rem;
      position: relative;
   }
-     */
+
   section,
   .section-container {
     height: fit-content;
