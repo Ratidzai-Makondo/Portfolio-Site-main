@@ -113,6 +113,23 @@ nav {
   transition: 0.3s;
 }
 
+.hamburger-toggle {
+  font-size: 1.8rem;
+  color: var(--clr-fg);
+  cursor: pointer;
+  z-index: 1001;
+  position: relative;
+}
+
+.hamburger-toggle i {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.menu-links {
+  background-color: var(--clr-bg-alt);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
 .menu-links {
   position: absolute;
   top: 100%;
@@ -131,9 +148,32 @@ nav {
 }
 
 .menu-links a {
-  display: block;
+  position: relative;
+  color: var(--clr-fg);
+  text-decoration: none;
   padding: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.menu-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 8px;
+  width: 0;
+  height: 2px;
+  background-color: var(--clr-primary);
+  transition: width 0.3s ease;
+}
+
+.menu-links a:hover {
+  color: var(--clr-primary);
+}
+
+.menu-links a:hover::after {
+  width: 100%;
 }
 
 theme-icon {
