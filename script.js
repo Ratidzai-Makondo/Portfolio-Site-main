@@ -1,16 +1,23 @@
 
 function toggleMenu() {
-    const menu = document.querySelector(".menu-links");
-    const icon = document.querySelector(".hamburger-icon");
-    menu.classList.toggle("open");
-    icon.classList.toggle("open");
-}
+  const menu = document.getElementById("menu-links");
+  const icon = document.getElementById("hamburger-icon");
 
+  menu.classList.toggle("open");
+
+  if (menu.classList.contains("open")) {
+    icon.classList.remove("fa-bars");
+    icon.classList.add("fa-xmark"); // from font awesome
+  } else {
+    icon.classList.remove("fa-xmark");
+    icon.classList.add("fa-bars");
+  }
+}
 
 const body = document.body;
 const btnTheme = document.querySelector('#btn-theme');
 
-// Add initial theme from localStorage or default to light
+// initial theme from localStorage or default to light
 const savedTheme = localStorage.getItem('portfolio-theme') || 'light';
 const savedIcon = localStorage.getItem('portfolio-btn-theme') || 'fa-moon';
 
@@ -67,12 +74,12 @@ const phrases = [
     let speed = isDeleting ? 40 : 101;
 
     if (!isDeleting && currentChar === fullText.length + 1) {
-      speed = 1400; // Pause at end
+      speed = 1400; // Pausing at end
       isDeleting = true;
     } else if (isDeleting && currentChar === 0) {
       isDeleting = false;
       currentPhrase = (currentPhrase + 1) % phrases.length;
-      speed = 400; // Pause before the next word
+      speed = 400; // Pausing before the next word
     }
 
     setTimeout(type, speed);
